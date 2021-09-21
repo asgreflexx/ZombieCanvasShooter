@@ -65,6 +65,7 @@ namespace FPSControllerLPFP
         private SmoothVelocity _velocityX;
         private SmoothVelocity _velocityZ;
         private bool _isGrounded;
+        private int health = 100;
 
         private readonly RaycastHit[] _groundCastResults = new RaycastHit[8];
         private readonly RaycastHit[] _wallCastResults = new RaycastHit[8];
@@ -147,6 +148,18 @@ namespace FPSControllerLPFP
 			arms.position = transform.position + transform.TransformVector(armPosition);
             Jump();
             PlayFootstepSounds();
+            CheckHealth();
+        }
+
+        private void CheckHealth()
+        {
+            if(health > 0)
+            {
+                Debug.Log("alive");
+            } else
+            {
+                Debug.Log("dead");
+            }
         }
 
         private void RotateCameraAndCharacter()
@@ -270,7 +283,16 @@ namespace FPSControllerLPFP
                 }
             }
         }
-			
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if(collision.transform.tag == "Zombie")
+            {
+                Debug.Log("autsch .... ");
+                health = health - 50;
+            }
+        }
+
         /// A helper for assistance with smoothing the camera rotation.
         private class SmoothRotation
         {
