@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace FPSControllerLPFP
 {
@@ -57,6 +58,9 @@ namespace FPSControllerLPFP
         private FpsInput input;
 #pragma warning restore 649
 
+        [Header("Health")]
+        public Text healthText;
+
         private Rigidbody _rigidbody;
         private CapsuleCollider _collider;
         private AudioSource _audioSource;
@@ -64,6 +68,7 @@ namespace FPSControllerLPFP
         private SmoothRotation _rotationY;
         private SmoothVelocity _velocityX;
         private SmoothVelocity _velocityZ;
+        public int kills = 0;
         private bool _isGrounded;
         private int health = 100;
 
@@ -153,13 +158,10 @@ namespace FPSControllerLPFP
 
         private void CheckHealth()
         {
-            if(health > 0)
+            if(health <= 0)
             {
-                Debug.Log("alive");
-            } else
-            {
-                Debug.Log("dead");
-            }
+                Debug.Log("Game Over");
+            } 
         }
 
         private void RotateCameraAndCharacter()
@@ -290,6 +292,15 @@ namespace FPSControllerLPFP
             {
                 Debug.Log("autsch .... ");
                 health = health - 50;
+                Debug.Log("Health: " + Convert.ToString(health));
+                healthText.text = Convert.ToString(health) + "%";
+                Debug.Log("bin hier");
+                if(health <= 0)
+                {
+                    healthText.text = "0%";
+                    health = 0;
+                }
+                //healthText.text = "Test123";
             }
         }
 

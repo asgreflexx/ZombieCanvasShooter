@@ -592,6 +592,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1009771893202788, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+      propertyPath: m_Name
+      value: KillCounterText
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390332723710886, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+      propertyPath: m_Name
+      value: HealthText
+      objectReference: {fileID: 0}
     - target: {fileID: 1778574915019774, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
       propertyPath: m_Name
       value: Assault_Rifle_01_FPSController
@@ -656,6 +664,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114092964818928360, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+      propertyPath: m_Text
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114265583903091638, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+      propertyPath: m_Text
+      value: 'Kills: 0'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955289662483194, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+      propertyPath: m_Text
+      value: 'Health:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114985937948325432, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 431793087}
     - target: {fileID: 136200420258760052, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -4256,6 +4280,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 429508, guid: 9c74caa742791864f9c678287121e6c9, type: 3}
   m_PrefabInstance: {fileID: 1254488015}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &431793087 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114092964818928360, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+  m_PrefabInstance: {fileID: 50614111}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &432934158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5106,7 +5141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 442488, guid: ec78ebca7517fb745a45a931cb06d2bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.3
+      value: 27.33
       objectReference: {fileID: 0}
     - target: {fileID: 442488, guid: ec78ebca7517fb745a45a931cb06d2bd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5114,7 +5149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 442488, guid: ec78ebca7517fb745a45a931cb06d2bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.197
+      value: -9.28
       objectReference: {fileID: 0}
     - target: {fileID: 442488, guid: ec78ebca7517fb745a45a931cb06d2bd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9725,6 +9760,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 327752029}
+    - target: {fileID: 1676062047, guid: 94434b79adcc114499e51f3fdf09e740, type: 3}
+      propertyPath: killCounter
+      value: 
+      objectReference: {fileID: 1513217412}
     - target: {fileID: 98404649501311492, guid: 94434b79adcc114499e51f3fdf09e740, type: 3}
       propertyPath: m_Name
       value: Zombie_Enemy Variant
@@ -16028,6 +16067,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec78ebca7517fb745a45a931cb06d2bd, type: 3}
+--- !u!114 &1513217412 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114265583903091638, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+  m_PrefabInstance: {fileID: 50614111}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1523394458 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 442488, guid: ec78ebca7517fb745a45a931cb06d2bd, type: 3}
@@ -21507,6 +21557,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 327752029}
+    - target: {fileID: 1676062047, guid: 94434b79adcc114499e51f3fdf09e740, type: 3}
+      propertyPath: killCounter
+      value: 
+      objectReference: {fileID: 1513217412}
     - target: {fileID: 98404649501311492, guid: 94434b79adcc114499e51f3fdf09e740, type: 3}
       propertyPath: m_Name
       value: Zombie_Enemy Variant (1)
@@ -22451,6 +22505,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 327752029}
+    - target: {fileID: 1676062047, guid: 94434b79adcc114499e51f3fdf09e740, type: 3}
+      propertyPath: killCounter
+      value: 
+      objectReference: {fileID: 1513217412}
     - target: {fileID: 98404649501311492, guid: 94434b79adcc114499e51f3fdf09e740, type: 3}
       propertyPath: m_Name
       value: Zombie_Enemy

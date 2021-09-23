@@ -1,7 +1,9 @@
+using FPSControllerLPFP;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Zombie : MonoBehaviour
 {
@@ -10,12 +12,14 @@ public class Zombie : MonoBehaviour
     [SerializeField] public bool isHit = false;
     public Transform player;
     private Rigidbody rb;
-
+    [Header("KillCounter")]
+    public Text killCounter;
+    private FpsControllerLPFP fpsController;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        fpsController = GetComponent<FpsControllerLPFP>();
     }
 
     // Update is called once per frame
@@ -26,6 +30,7 @@ public class Zombie : MonoBehaviour
             print("Zombie is hit");
             GetComponent<Animator>().SetBool("isHit", true);
             Destroy(gameObject, GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
+            isHit = false;
         } 
         else
         {
@@ -34,4 +39,11 @@ public class Zombie : MonoBehaviour
             //Debug.Log(direction);
         }
     }
+
+    private void OnDestroy()
+    {
+        GetComponent<FpsControllerLPFP>().kills++;
+        killCounter.text = "Kills: " + GetComponent<FpsControllerLPFP>().kills;
+    }
+
 }

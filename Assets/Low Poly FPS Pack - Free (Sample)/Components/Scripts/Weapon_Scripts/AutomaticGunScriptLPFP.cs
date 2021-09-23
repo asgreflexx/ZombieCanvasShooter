@@ -51,7 +51,6 @@ public class AutomaticGunScriptLPFP : MonoBehaviour {
 	public float autoReloadDelay;
 	//Check if reloading
 	private bool isReloading;
-
 	//Holstering weapon
 	private bool hasBeenHolstered = false;
 	//If weapon is holstered
@@ -114,7 +113,6 @@ public class AutomaticGunScriptLPFP : MonoBehaviour {
 	public AudioSource shootAudioSource;
 
 	[Header("UI Components")]
-	public Text timescaleText;
 	public Text currentWeaponText;
 	public Text currentAmmoText;
 	public Text totalAmmoText;
@@ -169,7 +167,6 @@ public class AutomaticGunScriptLPFP : MonoBehaviour {
 	}
 
 	private void Start () {
-		
 		//Save the weapon name
 		storedWeaponName = weaponName;
 		//Get weapon name from string to text
@@ -250,35 +247,35 @@ public class AutomaticGunScriptLPFP : MonoBehaviour {
 
 		//Timescale settings
 		//Change timescale to normal when 1 key is pressed
-		if (Input.GetKeyDown (KeyCode.Alpha1)) 
+		/*if (Input.GetKeyDown (KeyCode.Alpha1)) 
 		{
 			Time.timeScale = 1.0f;
 			timescaleText.text = "1.0";
-		}
+		}*/
 		//Change timesccale to 50% when 2 key is pressed
-		if (Input.GetKeyDown (KeyCode.Alpha2)) 
+		/*if (Input.GetKeyDown (KeyCode.Alpha2)) 
 		{
 			Time.timeScale = 0.5f;
 			timescaleText.text = "0.5";
-		}
+		}*/
 		//Change timescale to 25% when 3 key is pressed
-		if (Input.GetKeyDown (KeyCode.Alpha3)) 
+		/*if (Input.GetKeyDown (KeyCode.Alpha3)) 
 		{
 			Time.timeScale = 0.25f;
 			timescaleText.text = "0.25";
-		}
+		}*/
 		//Change timescale to 10% when 4 key is pressed
-		if (Input.GetKeyDown (KeyCode.Alpha4)) 
+		/*if (Input.GetKeyDown (KeyCode.Alpha4)) 
 		{
 			Time.timeScale = 0.1f;
 			timescaleText.text = "0.1";
-		}
+		}*/
 		//Pause game when 5 key is pressed
-		if (Input.GetKeyDown (KeyCode.Alpha5)) 
+		/*if (Input.GetKeyDown (KeyCode.Alpha5)) 
 		{
 			Time.timeScale = 0.0f;
 			timescaleText.text = "0.0";
-		}
+		}*/
 
 		//Set current ammo text from ammo int
 		currentAmmoText.text = currentAmmo.ToString ();
@@ -322,7 +319,7 @@ public class AutomaticGunScriptLPFP : MonoBehaviour {
 		else 
 		{
 			//When ammo is full, show weapon name again
-			currentWeaponText.text = storedWeaponName.ToString ();
+			//currentWeaponText.text = storedWeaponName.ToString();
 			//Toggle bool
 			outOfAmmo = false;
 			//anim.SetBool ("Out Of Ammo", false);
