@@ -160,6 +160,8 @@ namespace FPSControllerLPFP
         {
             if(health <= 0)
             {
+                var killCounterScript = GameObject.Find("KillCounter").GetComponent<KillCounterScript>();
+                killCounterScript.UpdateGameLost();
                 Debug.Log("Game Over");
             } 
         }

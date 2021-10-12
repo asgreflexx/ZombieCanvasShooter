@@ -12,14 +12,15 @@ public class Zombie : MonoBehaviour
     [SerializeField] public bool isHit = false;
     public Transform player;
     private Rigidbody rb;
-    [Header("KillCounter")]
-    public Text killCounter;
-    private FpsControllerLPFP fpsController;
 
     // Start is called before the first frame update
     void Start()
     {
-        fpsController = GetComponent<FpsControllerLPFP>();
+    }
+
+    void Awake()
+    {
+        //killCounterScript = GetComponent<KillCounterScript>();
     }
 
     // Update is called once per frame
@@ -42,8 +43,12 @@ public class Zombie : MonoBehaviour
 
     private void OnDestroy()
     {
-        GetComponent<FpsControllerLPFP>().kills++;
-        killCounter.text = "Kills: " + GetComponent<FpsControllerLPFP>().kills;
+        var killCounteScriptr = GameObject.Find("KillCounter").GetComponent<KillCounterScript>();
+        killCounteScriptr.killCounter++;
+        killCounteScriptr.UpdateKillCounter();
+
+        //killCounterScript.killCounter++;
+        //killCounterScript.UpdateKillCounter();
     }
 
 }
