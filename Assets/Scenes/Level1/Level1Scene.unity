@@ -8839,7 +8839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killCounter: 0
   killCounterText: {fileID: 1513217412}
-  winLooseText: {fileID: 0}
+  winLooseText: {fileID: 159717189}
 --- !u!4 &796784654
 Transform:
   m_ObjectHideFlags: 0
